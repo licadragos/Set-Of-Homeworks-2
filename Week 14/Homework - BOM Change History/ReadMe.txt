@@ -1,0 +1,1 @@
+Trebuie incarcat in Visual Studio Code/ alt program pt. a functiona.

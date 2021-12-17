@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework - 2 houses painted with HTML Canvas and SVG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #canvas {
+            border: 1px solid black;
+        }
+        #svg {
+            position: relative;
+            border: 1px solid black;
+        }
+        #svg-item {
+            position: absolute;
+            margin: 0 auto;
+            top: 120px;
+            left: 820px;
+        }
+        #svg-item2{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="750" height="750"></canvas>
+    <svg height="700" width="750">
+        <circle x="400" y="50" cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="yellow" />
+      </svg>
+    <svg id="svg-item" width="750" height="750" id="svg">
+        <rect width="600" height="530" style="fill:rgb(0, 218, 73);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect x="0" y="0"  width="600" height="50" style="fill:brown;stroke-width:3;stroke:rgb(0,0,0)" />
+
+        //deposit level
+        <rect id="svg-item2" x="70" y="70" width="80" height="50" style="fill: rgb(0, 204, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id="svg-item2" x="200" y="70" width="80" height="50" style="fill:rgb(0, 204, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id="svg-item2" x="330" y="70" width="80" height="50" style="fill:rgb(0, 204, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id="svg-item2" x="460" y="70" width="80" height="50" style="fill:rgb(0, 204, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+
+        //p level
+        <rect id="svg-item2" x="70" y="410" width="80" height="80" style="fill:rgb(0, 204, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id="svg-item2" x="180" y="420" width="60" height="60" style="fill:rgb(0, 204, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id="svg-item2" x="370" y="420" width="60" height="60" style="fill:rgb(0, 204, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id="svg-item2" x="460" y="410" width="80" height="80" style="fill:rgb(0, 204, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id="svg-item2" x="265" y="410" width="80" height="120" style="fill:rgb(139, 71, 71);stroke-width:3;stroke:rgb(0,0,0)" />
+
+        //level 1
+        <rect id="svg-item2" x="70" y="280" width="80" height="80" style="fill:rgb(0, 204, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id="svg-item2" x="200" y="280" width="80" height="80" style="fill:rgb(0, 204, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id="svg-item2" x="330" y="280" width="80" height="80" style="fill:rgb(0, 204, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id="svg-item2" x="460" y="280" width="80" height="80" style="fill:rgb(0, 204, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+
+        //level 2
+        <rect id="svg-item2" x="70" y="150" width="80" height="80" style="fill:rgb(0, 204, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id="svg-item2" x="200" y="150" width="80" height="80" style="fill:rgb(0, 204, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id="svg-item2" x="330" y="150" width="80" height="80" style="fill:rgb(0, 204, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id="svg-item2" x="460" y="150" width="80" height="80" style="fill:rgb(0, 204, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+
+      </svg>
+    <script>
+        window.addEventListener('load', () => {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+
+            // square
+            ctx.strokeStyle = "black";
+            ctx.strokeRect(40, 220, 660, 430);
+
+            //p level
+            ctx.strokeStyle = "black";
+            ctx.strokeRect(110, 510, 70, 70);
+
+            ctx.strokeStyle = "black";
+            ctx.strokeRect(220, 510, 90, 70);
+
+            ctx.strokeStyle = "black";
+            ctx.strokeRect(330, 510, 100, 140);
+
+            ctx.strokeStyle = "black";
+            ctx.strokeRect(450, 510, 90, 70);
+
+            ctx.strokeStyle = "black";
+            ctx.strokeRect(560, 510, 70, 70);
+
+
+            //1st level
+            ctx.strokeStyle = "black";
+            ctx.strokeRect(110, 390, 70, 70);
+
+            ctx.strokeStyle = "black";
+            ctx.strokeRect(260, 390, 210, 70);
+
+            ctx.strokeStyle = "black";
+            ctx.strokeRect(560, 390, 70, 70);
+
+            //2nd level
+            ctx.fillStyle = "blue";
+            ctx.strokeRect(110, 270, 70, 70);
+            ctx.fill();
+
+            ctx.strokeStyle = "black";
+            ctx.strokeRect(260, 270, 70, 70);
+
+            ctx.strokeStyle = "black";
+            ctx.strokeRect(410, 270, 70, 70);
+
+            ctx.strokeStyle = "black";
+            ctx.strokeRect(560, 270, 70, 70);
+
+            //the roof
+            ctx.strokeStyle = "black";
+            ctx.strokeRect(20, 170, 700, 50);
+        });
+    </script>
+</body>
+</html
